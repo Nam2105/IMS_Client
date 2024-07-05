@@ -7,7 +7,7 @@ import {
   removeSuccess,
 } from "../store/actions";
 import { Card, CardTitle, Button, CardBody } from "reactstrap";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SuccessMessage from "../components/SuccessMessage";
 class DeleteFaulty extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Admin_Sidenav from "../components/Admin_Sidenav";
 import { connect } from "react-redux";
 import { createTeacher, removeSuccess } from "../store/actions";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ErrorMessage from "../components/ErrorMessage";
 import SuccessMessage from "../components/SuccessMessage";
@@ -54,6 +54,7 @@ class AddFaculty extends Component {
     data["password"] = formData.get("password") || this.state.data.password;
     data["emailId"] = formData.get("emailId") || this.state.data.emailId;
     createTeacher(data);
+    toast.success("Add Success!");
   }
   render() {
     return (
