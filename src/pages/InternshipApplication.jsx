@@ -10,6 +10,7 @@ import {
 import Sidenav from "../components/Sidenav";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { toast } from "react-toastify";
 class InternshipApplication extends React.Component {
   componentWillUnmount() {
     const { removeSuccess, removeError } = this.props;
@@ -120,8 +121,8 @@ class InternshipApplication extends React.Component {
       if (key !== "files") data["application"][key] = value;
     }
     data["application"]["submittedDate"] = new Date().toUTCString();
-    data["application"]["NOCRequired"] =
-      document.getElementById("NOCRequired").checked;
+    // data["application"]["NOCRequired"] =
+    //   document.getElementById("NOCRequired").checked;
     const formDataFile = new FormData();
     formDataFile.append("docs", this.state.fileOL);
     data["files"] = this.state.files;
@@ -151,7 +152,7 @@ class InternshipApplication extends React.Component {
     const { uploadDocument, createInternship } = this.props;
     uploadDocument(formDataFile, config);
     createInternship(data).then(() => {
-      alert("Application submitted!");
+      toast.success("Application submitted!");
     });
   }
   handleUpload(id, labelId) {
@@ -272,7 +273,7 @@ class InternshipApplication extends React.Component {
                   </div>
                 </div>
                 <div className="form-row my-2">
-                  <div className="col-sm-6">
+                  {/* <div className="col-sm-6">
                     NOC required: <span className="text-danger">*</span>
                     <input
                       type="text"
@@ -281,8 +282,8 @@ class InternshipApplication extends React.Component {
                       className="form-control"
                       placeholder="Yes/No"
                     />
-                  </div>
-                  <div className="col-sm-6">
+                  </div> */}
+                  {/* <div className="col-sm-6">
                     Reference: <span className="text-danger">*</span>
                     <div className="input-group">
                       <div className="input-group-prepend">
@@ -302,7 +303,7 @@ class InternshipApplication extends React.Component {
                         className="form-control"
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <hr />
@@ -317,10 +318,10 @@ class InternshipApplication extends React.Component {
               <div className="container-fluid">
                 <div className="form-row">
                   <div className="col-sm-6">
-                    No Objection Certificate:{" "}
-                    <small className="text-secondary">
+                    CV:{" "}
+                    {/* <small className="text-secondary">
                       (Upload file if NOC is required in a specific format)
-                    </small>
+                    </small> */}
                     <div className="custom-file">
                       <input
                         type="file"
@@ -361,7 +362,7 @@ class InternshipApplication extends React.Component {
                 </div>
               </div>
               <hr />
-              Marksheets:{" "}
+              {/* Marksheets:{" "}
               <small className="text-primary float-right">
                 (File name: Roll_Year, eg: 41244_FE.pdf)
               </small>
@@ -447,7 +448,7 @@ class InternshipApplication extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <hr />
               <div className="text-right mb-2">
                 <button className="btn border-dark mx-2" type="reset">

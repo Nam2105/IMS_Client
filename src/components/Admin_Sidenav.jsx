@@ -88,14 +88,14 @@ class Admin_Sidenav extends Component {
             </li>
           </Link>
 
-          <Link to="/aicteReport" className="report">
+          {/* <Link to="/aicteReport" className="report">
             <li id="li" className={activeNow === 8 ? "sidenav-active" : ""}>
               <span className="mx-2">
                 <MdPoll style={{ margin: -1, padding: -1 }} />
               </span>
               AICTE Report
             </li>
-          </Link>
+          </Link> */}
 
           <Link to="/settings" className="setting">
             <li id="li" className={activeNow === 9 ? "sidenav-active" : ""}>

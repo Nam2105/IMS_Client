@@ -52,7 +52,7 @@ class FacStudentReport extends Component {
               date.getDate()}
           </td>
           <td>{application.durationOfInternship} month(s)</td>
-          <td>₹ {application.stipend}/month</td>
+          <td>$ {application.stipend}/month</td>
           <td>
             {completionStatus === "Approved" ? (
               <span className="text-success">{completionStatus}</span>

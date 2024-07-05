@@ -128,7 +128,7 @@ class NoticeForm extends Component {
               <div className="input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="inputGroupPrependRs">
-                    Rs.{" "}
+                    $.{" "}
                   </span>
                 </div>
                 <input
@@ -136,7 +136,7 @@ class NoticeForm extends Component {
                   className="form-control"
                   id="stipend"
                   name="stipend"
-                  placeholder="10000"
+                  placeholder="1000"
                   aria-describedby="inputGroupPrependRs"
                   required
                 />

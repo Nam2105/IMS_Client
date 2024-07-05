@@ -271,7 +271,7 @@ class AnalyticsCharts extends Component {
             >
               Top 5 Workplaces
             </a>
-            <a
+            {/* <a
               className="nav-item nav-link"
               id="nav-ywd-tab"
               data-toggle="tab"
@@ -303,7 +303,7 @@ class AnalyticsCharts extends Component {
               aria-selected="false"
             >
               Division-wise
-            </a>
+            </a> */}
             <a
               class="nav-item nav-link"
               id="nav-ovw-tab"

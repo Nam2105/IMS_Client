@@ -214,7 +214,7 @@ class Notices extends Component {
                     )}
                     {notice.stipend && (
                       <button className="btn btn-success mt-2">
-                        Rs. {notice.stipend}/month
+                        $. {notice.stipend}/month
                         <br />
                       </button>
                     )}

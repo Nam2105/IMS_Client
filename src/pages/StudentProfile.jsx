@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sidenav from "../components/Sidenav";
 import { updateStudent, getStudent } from "../store/actions";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 class StudentProfile extends Component {
   state = {
     isLoading: true,
@@ -52,8 +53,8 @@ class StudentProfile extends Component {
     data["rollNo"] = formData.get("rollNo") || this.state.data.rollNo;
     data["emailId"] = formData.get("emailId") || this.state.data.emailId;
     updateStudent(data);
-    alert("Profile Updated!");
-    window.location.reload(false);
+    toast.success("Profile Updated!");
+    // window.location.reload(false);
   }
   editform() {
     var form = document.getElementById("form");
