@@ -22,7 +22,7 @@ class ChangePassword extends Component {
         year: "eg. TE",
         div: "eg. 2",
       },
-      rollNo: "eg. 31241",
+      rollNo: "eg. 21010000",
       prevSemAttendance: "eg. 75.5",
       emailId: "example@gmail.com",
     },

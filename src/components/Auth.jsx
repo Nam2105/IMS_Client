@@ -10,6 +10,7 @@ import {
   logout_f,
   authUser_a,
 } from "../store/actions";
+import { toast } from "react-toastify";
 
 class Auth extends Component {
   constructor(props) {

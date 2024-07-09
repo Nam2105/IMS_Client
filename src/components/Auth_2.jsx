@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { authUser, logout } from "../store/actions";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { MdError } from "react-icons/md";
 import ErrorMessage from "../components/ErrorMessage";
-import { Toast } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 
 class Auth_2 extends Component {
@@ -16,6 +15,7 @@ class Auth_2 extends Component {
       emailId: "",
       confirmpassword: "",
       message: "",
+      check: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,22 +27,18 @@ class Auth_2 extends Component {
   }
 
   handleSubmit(e) {
-    var str = this.state.username;
-    var str1 = str.substring(0, 3);
-    console.log(str.length);
-    if (this.state.password === this.state.confirmpassword) {
-      if (
-         str.length >= 11
-      ) {
-        const { username, password, emailId } = this.state;
+    e.preventDefault();
+    const { username, password, emailId } = this.state;
+    if (password === this.state.confirmpassword) {
+      if (username.length >= 11) {
         const { authType } = this.props;
-        e.preventDefault();
         this.props.authUser(authType || "login", {
           username,
           password,
           emailId,
         });
         toast.success("Sign Up Success");
+        this.setState({ check: true });
       } else {
         alert("Invalid ID, Please check again ");
       }
@@ -50,6 +46,7 @@ class Auth_2 extends Component {
       alert("Error! Check form fields again... ");
     }
   }
+
   handleConfirmPassword(e) {
     this.setState({ [e.target.name]: e.target.value });
     if (this.state.password !== e.target.value) {
@@ -60,7 +57,7 @@ class Auth_2 extends Component {
   }
 
   render() {
-    const { username, password, emailId, confirmpassword } = this.state;
+    const { username, password, emailId, confirmpassword, check } = this.state;
     return (
       <div className="section">
         <div className="container">
@@ -84,7 +81,6 @@ class Auth_2 extends Component {
                   placeholder="Username"
                   className="form-control"
                   minLength="11"
-                  
                   autoComplete="off"
                   onChange={this.handleChange}
                 />
@@ -136,13 +132,17 @@ class Auth_2 extends Component {
                   <Link className="btn-custom mr-2" to="/login">
                     <b>Login</b>
                   </Link>
-                  <input type="submit" value="Register" />
+                  {check ? (
+                    <Redirect to="/login" />
+                  ) : (
+                    <input type="submit" value="Register" />
+                  )}
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <ToastContainer/>
+        <ToastContainer />
       </div>
     );
   }

@@ -15,6 +15,7 @@ class FacultyList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchValue:'',
       isLoading: true,
       faculties: [
         {
@@ -44,124 +45,123 @@ class FacultyList extends Component {
       elements[i].style.display = "none";
     }
   }
-  filter(e) {
-    var filter, cards, cardContent, i;
-    filter = e.target.value.toUpperCase();
-    cards = document.getElementsByClassName("card");
-    for (i = 0; i < cards.length; i++) {
-      cardContent = cards[i].querySelector(".individual-card");
-      if (cardContent.innerText.toUpperCase().indexOf(filter) > -1) {
-        cards[i].style.display = "";
-      } else {
-        cards[i].style.display = "none";
-      }
-    }
-  }
+ 
   handleCardView() {
     let elements = document.getElementsByClassName("card-body");
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = "block";
     }
   }
+  filter=(value)=>{
+    return this.state.faculties.filter(item=>{
+      const fullName = item.name.firstname +' ' + item.name.lastname
+      if(fullName.toLocaleLowerCase().includes(value.toLocaleLowerCase())){
+        return item
+      }
+    })
+  }
   expandInline(e) {
     e.target.parentElement.lastChild.style.display = "block";
   }
-
-  renderCardData() {
-    return this.state.faculties.map((faculty) => {
-      const {
-        _id,
-        username,
-        name,
-        currentClass,
-        department,
-        designation,
-        emailId,
-      } = faculty;
-      return (
-        <div
-          className="col-sm-6"
-          key={_id}
-          name="facultyCard"
-          id={
-            username +
-            name.firstname +
-            name.lastname +
-            currentClass.year +
-            currentClass.div +
-            department +
-            designation
-          }
-        >
-          <div className="card my-2">
-            <div className="individual-card">
-              <div
-                className="card-header"
-                onClick={this.expandInline.bind(this)}
-              >
-                Prof. {name.firstname + " " + name.lastname}
-                <span className="float-right">
-                  {designation === "ClassCoordinator" ? (
-                    <span className="mx-1">
-                      <MdLocalLibrary
-                        style={{ margin: -1, padding: -1 }}
-                        size="24"
-                        color="firebrick"
-                      />
-                    </span>
-                  ) : designation === "Admin" ? (
-                    <span className="mx-1">
-                      <MdBuild
-                        style={{ margin: -1, padding: -1 }}
-                        size="24"
-                        color="blue"
-                      />
-                    </span>
-                  ) : designation === "DepartmentInternshipCoordinator" ? (
-                    <span className="mx-1">
-                      <MdAssignmentInd
-                        style={{ margin: -1, padding: -1 }}
-                        size="24"
-                        color="green"
-                      />
-                    </span>
-                  ) : designation === "CollegeInternshipCoordinator" ? (
-                    <span className="mx-1">
-                      <MdSupervisorAccount
-                        style={{ margin: -1, padding: -1 }}
-                        size="24"
-                        color="orange"
-                      />
-                    </span>
-                  ) : (
-                    <span></span>
-                  )}
-                </span>
-                <br />
-                <small className="text-muted">Username: {username}</small>
-              </div>
-              <div className="card-body">
-                <b> Current Class : </b>
-                {currentClass.year}{" "}
-                {currentClass.div === 0 ? "" : currentClass.div}
-                <br />
-                <b> Department : </b>
-                {department}
-                <br />
-                <b> Designation : </b>
-                {designation}
-                <br />
-                <b> Email Id : </b>
-                {emailId}
-                <br />
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    });
-  }
+ onChangeSearch=(e)=>{
+  this.setState({searchValue:e.target.value})
+ }
+  // renderCardData(list) {
+  //   return list.map((faculty) => {
+  //     const {
+  //       _id,
+  //       username,
+  //       name,
+  //       currentClass,
+  //       department,
+  //       designation,
+  //       emailId,
+  //     } = faculty;
+  //     return (
+  //       <div
+  //         className="col-sm-6"
+  //         key={_id}
+  //         name="facultyCard"
+  //         id={
+  //           username +
+  //           name.firstname +
+  //           name.lastname +
+  //           currentClass.year +
+  //           currentClass.div +
+  //           department +
+  //           designation
+  //         }
+  //       >
+  //         <div className="card my-2">
+  //           <div className="individual-card">
+  //             <div
+  //               className="card-header"
+  //               onClick={this.expandInline.bind(this)}
+  //             >
+  //               Prof. {name.firstname + " " + name.lastname}
+  //               <span className="float-right">
+  //                 {designation === "ClassCoordinator" ? (
+  //                   <span className="mx-1">
+  //                     <MdLocalLibrary
+  //                       style={{ margin: -1, padding: -1 }}
+  //                       size="24"
+  //                       color="firebrick"
+  //                     />
+  //                   </span>
+  //                 ) : designation === "Admin" ? (
+  //                   <span className="mx-1">
+  //                     <MdBuild
+  //                       style={{ margin: -1, padding: -1 }}
+  //                       size="24"
+  //                       color="blue"
+  //                     />
+  //                   </span>
+  //                 ) : designation === "DepartmentInternshipCoordinator" ? (
+  //                   <span className="mx-1">
+  //                     <MdAssignmentInd
+  //                       style={{ margin: -1, padding: -1 }}
+  //                       size="24"
+  //                       color="green"
+  //                     />
+  //                   </span>
+  //                 ) : designation === "CollegeInternshipCoordinator" ? (
+  //                   <span className="mx-1">
+  //                     <MdSupervisorAccount
+  //                       style={{ margin: -1, padding: -1 }}
+  //                       size="24"
+  //                       color="orange"
+  //                     />
+  //                   </span>
+  //                 ) : (
+  //                   <span></span>
+  //                 )}
+  //               </span>
+  //               <br />
+  //               <small className="text-muted">Username: {username}</small>
+  //             </div>
+  //             <div className="card-body">
+  //               <b> Current Class : </b>
+  //               {currentClass.year}{" "}
+  //               {currentClass.div === 0 ? "" : currentClass.div}
+  //               <br />
+  //               <b> Department : </b>
+  //               {department}
+  //               <br />
+  //               <b> Designation : </b>
+  //               {designation}
+  //               <br />
+  //               <b> Email Id : </b>
+  //               {emailId}
+  //               <br />
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     );
+  //   });
+  // }
   render() {
+    const filteredList = [...this.filter(this.state.searchValue)]
     return (
       <div>
         <div className="row no-gutters">
@@ -226,12 +226,106 @@ class FacultyList extends Component {
                   id="filter"
                   className="form-control"
                   placeholder="Filter Faculty"
-                  onChange={this.filter}
+                  onChange={this.onChangeSearch}
+                  value={this.state.searchValue}
                   aria-describedby="filtersearch"
                 />
               </div>
               <hr />
-              <div className="row">{this.renderCardData()}</div>
+              <div className="row">{
+                filteredList.map((faculty) => {
+                  const {
+                    _id,
+                    username,
+                    name,
+                    currentClass,
+                    department,
+                    designation,
+                    emailId,
+                  } = faculty;
+                  return (
+                    <div
+                      className="col-sm-6"
+                      key={_id}
+                      name="facultyCard"
+                      id={
+                        username +
+                        name.firstname +
+                        name.lastname +
+                        currentClass.year +
+                        currentClass.div +
+                        department +
+                        designation
+                      }
+                    >
+                      <div className="card my-2">
+                        <div className="individual-card">
+                          <div
+                            className="card-header"
+                            onClick={this.expandInline.bind(this)}
+                          >
+                            Prof. {name.firstname + " " + name.lastname}
+                            <span className="float-right">
+                              {designation === "ClassCoordinator" ? (
+                                <span className="mx-1">
+                                  <MdLocalLibrary
+                                    style={{ margin: -1, padding: -1 }}
+                                    size="24"
+                                    color="firebrick"
+                                  />
+                                </span>
+                              ) : designation === "Admin" ? (
+                                <span className="mx-1">
+                                  <MdBuild
+                                    style={{ margin: -1, padding: -1 }}
+                                    size="24"
+                                    color="blue"
+                                  />
+                                </span>
+                              ) : designation === "DepartmentInternshipCoordinator" ? (
+                                <span className="mx-1">
+                                  <MdAssignmentInd
+                                    style={{ margin: -1, padding: -1 }}
+                                    size="24"
+                                    color="green"
+                                  />
+                                </span>
+                              ) : designation === "CollegeInternshipCoordinator" ? (
+                                <span className="mx-1">
+                                  <MdSupervisorAccount
+                                    style={{ margin: -1, padding: -1 }}
+                                    size="24"
+                                    color="orange"
+                                  />
+                                </span>
+                              ) : (
+                                <span></span>
+                              )}
+                            </span>
+                            <br />
+                            <small className="text-muted">Username: {username}</small>
+                          </div>
+                          <div className="card-body">
+                            <b> Current Class : </b>
+                            {currentClass.year}{" "}
+                            {currentClass.div === 0 ? "" : currentClass.div}
+                            <br />
+                            <b> Department : </b>
+                            {department}
+                            <br />
+                            <b> Designation : </b>
+                            {designation}
+                            <br />
+                            <b> Email Id : </b>
+                            {emailId}
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+                }</div>
             </div>
           </div>
         </div>

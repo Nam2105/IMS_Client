@@ -15,7 +15,7 @@ class StudentProfile extends Component {
         year: "eg. TE",
         div: "eg. 2",
       },
-      rollNo: "eg. 31241",
+      rollNo: "eg. 21010000",
       prevSemAttendance: "eg. 75.5",
       emailId: "example@gmail.com",
     },
@@ -49,12 +49,13 @@ class StudentProfile extends Component {
       div: formData.get("div") || this.state.data.currentClass.div,
     };
     data["prevSemAttendance"] =
-      formData.get("prevSemAttendance") || this.state.data.prevSemAttendance;
+      formData.get("prevSemAttendance")||   "80" || this.state.data.prevSemAttendance;
     data["rollNo"] = formData.get("rollNo") || this.state.data.rollNo;
     data["emailId"] = formData.get("emailId") || this.state.data.emailId;
     updateStudent(data);
     toast.success("Profile Updated!");
     // window.location.reload(false);
+    console.log(formData);
   }
   editform() {
     var form = document.getElementById("form");
@@ -124,27 +125,7 @@ class StudentProfile extends Component {
                           placeholder={this.state.data.rollNo}
                         />
                       </div>
-                      <div className="col-sm-6">
-                        Attendance:
-                        <div className="input-group">
-                          <div className="input-group">
-                            <input
-                              readOnly
-                              type="number"
-                              name="prevSemAttendance"
-                              id="prevSemAttendance"
-                              placeholder={this.state.data.prevSemAttendance}
-                              className="form-control"
-                            />
-                            <div className="input-group-append">
-                              <span className="input-group-text">%</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="form-row my-2">
                       <div className="col-sm-6">
                         Year:
                         <select
@@ -165,6 +146,9 @@ class StudentProfile extends Component {
                           <option value="BE">BE</option>
                         </select>
                       </div>
+                    </div>
+
+                    <div className="form-row my-2">                     
                       <div className="col-sm-6">
                         Division:
                         <input
@@ -178,8 +162,21 @@ class StudentProfile extends Component {
                           className="form-control"
                         />
                       </div>
+
+                      <div className="col-sm-6">
+                        Email Id:
+                        <input
+                          readOnly
+                          type="email"
+                          name="emailId"
+                          id="emailId"
+                          placeholder={this.state.data.emailId}
+                          className="form-control"
+                        />
+                      </div>
+
                     </div>
-                    <div className="form-row my-2">
+                    {/* <div className="form-row my-2">
                       <div className="col-sm-12">
                         Email Id:
                         <input
@@ -191,7 +188,7 @@ class StudentProfile extends Component {
                           className="form-control"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <hr />
                   <div className="text-right">

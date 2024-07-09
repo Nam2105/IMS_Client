@@ -124,28 +124,28 @@ class StudentList extends Component {
   loadSomeStudents(student) {
     this.setState({ students: student });
   }
-  renderCardData1() {
-    return this.state.students.map((students) => {
-      const { _id, username, name, currentClass, rollNo, created } = students;
-      return (
-        <tr key={_id} className="application">
-          <td>
-            <input type="checkbox" name="check" id={_id} value={_id} />
-          </td>
-          <td>{username}</td>
-          <td>{rollNo}</td>
-          <td>{name.firstname + " " + name.lastname}</td>
-          <td>{currentClass.year + " " + currentClass.div}</td>
-          <td>{new Date(created).toDateString()}</td>
-        </tr>
-      );
-    });
-  }
-
+  // renderCardData1() {
+  //   return this.state.students.map((students) => {
+  //     const { _id, username, name, currentClass, rollNo, created } = students;
+  //     return (
+  //       <tr key={_id} className="application">
+  //         <td>
+  //           <input type="checkbox" name="check" id={_id} value={_id} />
+  //         </td>
+  //         <td>{username}</td>
+  //         <td>{rollNo}</td>
+  //         <td>{name.firstname + " " + name.lastname}</td>
+  //         <td>{currentClass.year + " " + currentClass.div}</td>
+  //         <td>{new Date(created).toDateString()}</td>
+  //       </tr>
+  //     );
+  //   });
+  // }
   renderCardData() {
     return this.state.students.map((students) => {
       const { _id, username, name, currentClass, rollNo, created } = students;
-
+      const fullName = name?.firstname ?    name?.firstname + " " + name?.lastname : 'No data'
+      const year = currentClass?.year ? currentClass?.year + " " + currentClass?.div : 'No data'
       return (
         <tr key={_id} className="application">
           <td>
@@ -153,8 +153,8 @@ class StudentList extends Component {
           </td>
           <td>{username}</td>
           <td>{rollNo}</td>
-          <td>{name.firstname + " " + name.lastname}</td>
-          <td>{currentClass.year + " " + currentClass.div}</td>
+          <td>{fullName}</td>
+          <td>{year}</td>
           <td>{new Date(created).toDateString()}</td>
         </tr>
       );
