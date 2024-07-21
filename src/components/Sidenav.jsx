@@ -38,14 +38,14 @@ class Sidenav extends Component {
               Profile
             </li>
           </Link>
-          {/* <Link to="/student">
+          <Link to="/student">
             <li id="li" className={activeNow === "1" ? "sidenav-active" : ""}>
               <span className="mx-2">
                 <MdDns style={{ margin: -1, padding: -1 }} />
               </span>
               My Applications
             </li>
-          </Link> */}
+          </Link>
           <Link to="/apply">
             <li id="li" className={activeNow === "3" ? "sidenav-active" : ""}>
               <span className="mx-2">

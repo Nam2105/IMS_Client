@@ -235,15 +235,23 @@ class InternshipApplication extends React.Component {
                 </div>
                 <div className="form-row my-2">
                   <div className="col-sm-6">
-                    Type of Internship: <span className="text-danger">*</span>
-                    <input
-                      type="text"
+                  Internship Type: <span className="text-danger">*</span>
+                    <select
                       name="internshipType"
                       id="internshipType"
                       className="form-control"
                       placeholder="eg. Fulltime"
+                      value={this.state.internshipType}
+                      onChange={(e) =>
+                        this.setState({ internshipType: e.target.value })
+                      }
                       required
-                    />
+                    >
+                      <option value="">Select Type</option>
+                      <option value="Full-Time">Full-Time</option>
+                      <option value="Part-Time">Part-Time</option>
+                      <option value="Remote">Remote</option>
+                    </select>
                   </div>
 
                   <div className="col-sm-6">

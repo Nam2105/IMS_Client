@@ -100,12 +100,12 @@ class ViewApprovedInternship extends Component {
                             <td>ID</td>
                             <td>{this.state.data._id}</td>
                           </tr>
-                          <tr>
+                          {/* <tr>
                             <td>Attendance</td>
                             <td>
                               {this.state.data.student.prevSemAttendance}%
                             </td>
-                          </tr>
+                          </tr> */}
                           <tr>
                             <td>Roll No</td>
                             <td>{this.state.data.student.rollNo}</td>
@@ -167,7 +167,7 @@ class ViewApprovedInternship extends Component {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr
+                          {/* <tr
                             className={
                               this.state.data.docs.AttendanceStatus ===
                               "Pending"
@@ -177,7 +177,7 @@ class ViewApprovedInternship extends Component {
                           >
                             <td>Attendance</td>
                             <td>{this.state.data.docs.AttendanceStatus}</td>
-                          </tr>
+                          </tr> */}
                           <tr
                             className={
                               this.state.data.docs.ApplicationStatus ===
@@ -186,10 +186,10 @@ class ViewApprovedInternship extends Component {
                                 : "table-success"
                             }
                           >
-                            <td>Application</td>
+                            <td>CV</td>
                             <td>{this.state.data.docs.ApplicationStatus}</td>
                           </tr>
-                          <tr
+                          {/* <tr
                             className={
                               this.state.data.docs.UndertakingStatus ===
                               "Pending"
@@ -199,7 +199,7 @@ class ViewApprovedInternship extends Component {
                           >
                             <td>Undertaking</td>
                             <td>{this.state.data.docs.UndertakingStatus}</td>
-                          </tr>
+                          </tr> */}
                           <tr
                             className={
                               this.state.data.docs.OfferLetterStatus ===
@@ -211,7 +211,7 @@ class ViewApprovedInternship extends Component {
                             <td>Offer Letter</td>
                             <td>{this.state.data.docs.OfferLetterStatus}</td>
                           </tr>
-                          <tr
+                          {/* <tr
                             className={
                               this.state.data.docs.MarksheetsStatus ===
                               "Pending"
@@ -221,7 +221,7 @@ class ViewApprovedInternship extends Component {
                           >
                             <td>Marksheets</td>
                             <td>{this.state.data.docs.MarksheetsStatus}</td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                       {this.state.data.completionStatus === "Pending" && (

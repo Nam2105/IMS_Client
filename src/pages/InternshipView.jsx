@@ -226,12 +226,12 @@ class InternshipView extends Component {
                             <td>ID</td>
                             <td>{this.state.data._id}</td>
                           </tr>
-                          <tr>
+                          {/* <tr>
                             <td>Attendance</td>
                             <td>
                               {this.state.data.student.prevSemAttendance}%
                             </td>
-                          </tr>
+                          </tr> */}
                           <tr>
                             <td>Roll No</td>
                             <td>{this.state.data.student.rollNo}</td>
@@ -299,7 +299,7 @@ class InternshipView extends Component {
                           </thead>
 
                           <tbody>
-                            <tr
+                            {/* <tr
                               className={
                                 this.state.data.docs.AttendanceStatus ===
                                 "Pending"
@@ -324,7 +324,7 @@ class InternshipView extends Component {
                                   )}
                                 </div>
                               </td>
-                            </tr>
+                            </tr> */}
                             <tr
                               className={
                                 this.state.data.docs.ApplicationStatus ===
@@ -333,7 +333,7 @@ class InternshipView extends Component {
                                   : "table-success"
                               }
                             >
-                              <td>Application</td>
+                              <td>CV</td>
                               <td>
                                 {this.state.data.docs.ApplicationStatus}
                                 <div className="float-right">
@@ -351,7 +351,7 @@ class InternshipView extends Component {
                                 </div>
                               </td>
                             </tr>
-                            <tr
+                            {/* <tr
                               className={
                                 this.state.data.docs.UndertakingStatus ===
                                 "Pending"
@@ -376,7 +376,7 @@ class InternshipView extends Component {
                                   )}
                                 </div>
                               </td>
-                            </tr>
+                            </tr> */}
                             <tr
                               className={
                                 this.state.data.docs.OfferLetterStatus ===
@@ -403,7 +403,7 @@ class InternshipView extends Component {
                                 </div>
                               </td>
                             </tr>
-                            <tr
+                            {/* <tr
                               className={
                                 this.state.data.docs.MarksheetsStatus ===
                                 "Pending"
@@ -428,7 +428,7 @@ class InternshipView extends Component {
                                   )}
                                 </div>
                               </td>
-                            </tr>
+                            </tr> */}
 
                             {this.state.showButton && (
                               <tr>

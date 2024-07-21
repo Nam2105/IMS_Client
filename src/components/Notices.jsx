@@ -9,6 +9,8 @@ import {
   MdMailOutline,
   MdSearch,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
+
 class Notices extends Component {
   filter(e) {
     var filter, cards, cardContent, i;
@@ -26,6 +28,7 @@ class Notices extends Component {
       }
     }
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -45,6 +48,8 @@ class Notices extends Component {
           positions: null,
           domain: null,
           requirements: null,
+          startDate: null,
+          internshipType: null,
         },
       ],
     };
@@ -54,6 +59,7 @@ class Notices extends Component {
     const { getNotices } = this.props;
     getNotices().then(() => this.loadData(this.props.notices));
   }
+
   loadData(notices) {
     this.setState({ notices: notices });
   }
@@ -76,7 +82,7 @@ class Notices extends Component {
             id="filter"
             className="form-control"
             placeholder="Filter Notices"
-            onChange={this.filter}
+            onChange={(e) => this.filter(e)}
             aria-describedby="filtersearch"
           />
         </div>
@@ -139,17 +145,29 @@ class Notices extends Component {
                               </ul>
                             </div>
                           )}
-                          {notice.duration && (
-                            <div>
-                              <span className="mx-2">
-                                <MdAccessTime
-                                  style={{ margin: -1, padding: -1 }}
-                                  size="22"
-                                />
-                              </span>
-                              {notice.duration} months
-                            </div>
-                          )}
+                          <div className="d-flex justify-content-between">
+                            {notice.duration && (
+                              <div>
+                                <span className="mx-2">
+                                  <MdAccessTime
+                                    style={{ margin: -1, padding: -1 }}
+                                    size="22"
+                                  />
+                                </span>
+                                {notice.duration} months
+                              </div>
+                            )}
+                            {notice.startDate && (
+                              <div>
+                                <strong>Start Date:</strong> {new Date(notice.startDate).toDateString()}
+                              </div>
+                            )}
+                            {notice.internshipType && (
+                              <div>
+                                <strong>Type:</strong> {notice.internshipType}
+                              </div>
+                            )}
+                          </div>
                           {notice.location && (
                             <div>
                               <span className="mx-2">
@@ -213,10 +231,19 @@ class Notices extends Component {
                       </div>
                     )}
                     {notice.stipend && (
-                      <button className="btn btn-success mt-2">
-                        $. {notice.stipend}/month
-                        <br />
-                      </button>
+                      <Link
+                        to={{
+                          pathname: "/apply",
+                          state: {
+                            notice: notice, // Pass the whole notice object
+                          },
+                        }}
+                      >
+                        <button className="btn btn-success mt-2">
+                          $. {notice.stipend}/month
+                          <br />
+                        </button>
+                      </Link>
                     )}
                   </div>
                 </div>

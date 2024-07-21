@@ -8,8 +8,8 @@ class StudentProfile extends Component {
     isLoading: true,
     data: {
       name: {
-        firstname: "eg. Nguyen",
-        lastname: "eg. Nam",
+        firstname: "eg. Nam",
+        lastname: "eg. Nguyễn",
       },
       currentClass: {
         year: "eg. TE",
@@ -150,7 +150,7 @@ class StudentProfile extends Component {
 
                     <div className="form-row my-2">                     
                       <div className="col-sm-6">
-                        Division:
+                        Class:
                         <input
                           readOnly
                           type="number"

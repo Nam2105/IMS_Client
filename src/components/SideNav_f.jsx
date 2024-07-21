@@ -40,7 +40,7 @@ class Sidenav_f extends Component {
               Profile
             </li>
           </Link>
-          {/* <Link to="/internships">
+          <Link to="/internships">
             <li id="li" className={activeNow === "2" ? "sidenav-active" : ""}>
               <span className="mx-2">
                 <MdViewList style={{ margin: -1, padding: -1 }} />
@@ -55,7 +55,7 @@ class Sidenav_f extends Component {
               </span>
               Approved Applications
             </li>
-          </Link> */}
+          </Link>
           <Link to="/createnotice">
             <li id="li" className={activeNow === "4" ? "sidenav-active" : ""}>
               <span className="mx-2">

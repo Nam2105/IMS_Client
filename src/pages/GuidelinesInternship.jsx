@@ -14,71 +14,48 @@ class GuidelinesInternship extends Component {
           <div className="container-fluid">
             <div class="alert alert-light" role="alert">
               <h4 style={{ color: "#000" }} class="alert-heading">
-                INTERNSHIP GUIDELINES FOR STUDENTS
+                HƯỚNG DẪN THỰC TẬP CHO SINH VIÊN
               </h4>
-              <a style={{ color: "#000", fontSize: "18px" }}>
-                Internship is great opportunity to learn in industry environment
-                without being an employee of company. Students are advised to
-                set their goals prior to starting their internship and focus on
-                completing them during internship.{" "}
-              </a>
+              <p style={{ color: "#000", fontSize: "18px" }}>
+                Thực tập là cơ hội quan trọng giúp sinh viên trải nghiệm môi trường làm việc thực tế và phát triển kỹ năng chuyên môn. Dưới đây là những hướng dẫn dành cho sinh viên khi tham gia chương trình thực tập:
+              </p>
               <hr />
               <h4 style={{ color: "#000" }} class="alert-heading">
-                Following are internship guidelines for students :{" "}
+                Hướng dẫn cụ thể:
               </h4>
 
               <ol style={{ marginLeft: "18px" }}>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  Internship may be full time or part time.
+                  <strong>Loại hình thực tập:</strong> Sinh viên có thể chọn thực tập toàn thời gian hoặc bán thời gian tùy theo lịch học và yêu cầu của chương trình thực tập.
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  Internship may be paid or unpaid.
+                  <strong>Thời gian và lương:</strong> Thực tập có thể kéo dài từ 1 đến 3 tháng và có thể được trả lương hoặc không lương tùy theo công ty.
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  Internship duration is including vacation period as follows :
+                  <strong>Thời gian phù hợp:</strong> 
                   <ul>
                     <li style={{ marginLeft: "15px", fontSize: "18px" }}>
-                      Maximum of 2 months: for UG after 6th semester.
+                      Sinh viên năm cuối: Thực tập kéo dài tối đa 3 tháng.
                     </li>
                     <li style={{ marginLeft: "15px", fontSize: "18px" }}>
-                      Maximum of 1.5 months: for UG after 2nd and 4th semester.
+                      Sinh viên năm 2 và năm 3: Thực tập kéo dài tối đa 2 tháng.
                     </li>
                   </ul>
                 </li>
-                <li style={{ color: "#f44336", fontSize: "18px" }}>
-                  <strong>
-                    {" "}
-                    Eligibilty criteria : Minimum 75% attendance is compulsory
-                    and more than 7 CGPA in previous consecutive years.
-                  </strong>
-                </li>
-                <li style={{ color: "#f44336", fontSize: "18px" }}>
-                  <strong>
-                    {" "}
-                    After completing the internship, certificate of completion
-                    will have to be uploaded on the portal.
-                  </strong>
+                <li style={{ color: "#000", fontSize: "18px" }}>
+                  <strong>Yêu cầu:</strong> Sinh viên cần đảm bảo đạt yêu cầu về thành tích học tập (trên 2.5 điểm trung bình chung).
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  {" "}
-                  No student will be permitted for internship without prior
-                  permission of institute.
+                  <strong>Chứng nhận hoàn thành:</strong> Sau khi hoàn thành thực tập, sinh viên cần nộp giấy chứng nhận hoàn thành cho nhà trường.
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  {" "}
-                  The intern will demonstrate punctuality and a willingness to
-                  learn during internship programme.{" "}
+                  <strong>Quy định của trường:</strong> Sinh viên phải có sự cho phép của nhà trường trước khi bắt đầu thực tập.
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  {" "}
-                  The intern will obey policies, rules and regulations of the
-                  company/institute and comply with the institues/company's
-                  business practices and procedures.
+                  <strong>Trách nhiệm và tuân thủ:</strong> Sinh viên cần tuân thủ các quy định và nội quy của công ty, thể hiện tính kỷ luật và tinh thần học hỏi cao.
                 </li>
                 <li style={{ color: "#000", fontSize: "18px" }}>
-                  {" "}
-                  The intern will maintain a regular internship schedule
-                  determined by the institute or company.
+                  <strong>Lịch trình:</strong> Sinh viên cần duy trì lịch trình thực tập đều đặn và báo cáo tiến độ với người hướng dẫn.
                 </li>
               </ol>
             </div>

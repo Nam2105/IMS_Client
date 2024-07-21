@@ -208,7 +208,7 @@ class Internships extends Component {
                               </tr>
                             </thead>
                             <tbody>
-                              <tr
+                              {/* <tr
                                 className={
                                   internship.docs.AttendanceStatus === "Pending"
                                     ? "table-warning"
@@ -217,7 +217,7 @@ class Internships extends Component {
                               >
                                 <td>Attendance</td>
                                 <td>{internship.docs.AttendanceStatus}</td>
-                              </tr>
+                              </tr> */}
                               <tr
                                 className={
                                   internship.docs.ApplicationStatus ===
@@ -226,10 +226,10 @@ class Internships extends Component {
                                     : "table-success"
                                 }
                               >
-                                <td>Application</td>
+                                <td>CV</td>
                                 <td>{internship.docs.ApplicationStatus}</td>
                               </tr>
-                              <tr
+                              {/* <tr
                                 className={
                                   internship.docs.UndertakingStatus ===
                                   "Pending"
@@ -239,7 +239,7 @@ class Internships extends Component {
                               >
                                 <td>Undertaking</td>
                                 <td>{internship.docs.UndertakingStatus}</td>
-                              </tr>
+                              </tr> */}
                               <tr
                                 className={
                                   internship.docs.OfferLetterStatus ===
@@ -251,7 +251,7 @@ class Internships extends Component {
                                 <td>Offer Letter</td>
                                 <td>{internship.docs.OfferLetterStatus}</td>
                               </tr>
-                              <tr
+                              {/* <tr
                                 className={
                                   internship.docs.MarksheetsStatus === "Pending"
                                     ? "table-warning"
@@ -260,7 +260,7 @@ class Internships extends Component {
                               >
                                 <td>Marksheets</td>
                                 <td>{internship.docs.MarksheetsStatus}</td>
-                              </tr>
+                              </tr> */}
                             </tbody>
                           </table>
 

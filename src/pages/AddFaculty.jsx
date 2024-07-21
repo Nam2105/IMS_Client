@@ -85,7 +85,7 @@ class AddFaculty extends Component {
                           name="firstname"
                           id="firstname"
                           className="form-control"
-                          placeholder="eg. Nguyen"
+                          placeholder="eg. Nam"
                         />
                       </div>
                       <div className="col-sm-6">
@@ -95,7 +95,7 @@ class AddFaculty extends Component {
                           type="text"
                           name="lastname"
                           id="lastname"
-                          placeholder="eg. Nam"
+                          placeholder="eg. Nguyễn"
                           className="form-control"
                         />
                       </div>
@@ -152,7 +152,7 @@ class AddFaculty extends Component {
                         />
                       </div>
                       <div className="col-sm-6">
-                        Division:
+                        Class:
                         <input
                           required
                           type="number"

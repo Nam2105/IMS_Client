@@ -225,7 +225,7 @@ class MainContent extends Component {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr
+                          {/* <tr
                             className={
                               internship.docs.AttendanceStatus === "Pending"
                                 ? "table-warning"
@@ -234,7 +234,7 @@ class MainContent extends Component {
                           >
                             <td>Attendance</td>
                             <td>{internship.docs.AttendanceStatus}</td>
-                          </tr>
+                          </tr> */}
                           <tr
                             className={
                               internship.docs.ApplicationStatus === "Pending"
@@ -242,10 +242,10 @@ class MainContent extends Component {
                                 : "table-success"
                             }
                           >
-                            <td>Application</td>
+                            <td>CV</td>
                             <td>{internship.docs.ApplicationStatus}</td>
                           </tr>
-                          <tr
+                          {/* <tr
                             className={
                               internship.docs.UndertakingStatus === "Pending"
                                 ? "table-warning"
@@ -254,7 +254,7 @@ class MainContent extends Component {
                           >
                             <td>Undertaking</td>
                             <td>{internship.docs.UndertakingStatus}</td>
-                          </tr>
+                          </tr> */}
                           <tr
                             className={
                               internship.docs.OfferLetterStatus === "Pending"
@@ -265,7 +265,7 @@ class MainContent extends Component {
                             <td>Offer Letter</td>
                             <td>{internship.docs.OfferLetterStatus}</td>
                           </tr>
-                          <tr
+                          {/* <tr
                             className={
                               internship.docs.MarksheetsStatus === "Pending"
                                 ? "table-warning"
@@ -274,7 +274,7 @@ class MainContent extends Component {
                           >
                             <td>Marksheets</td>
                             <td>{internship.docs.MarksheetsStatus}</td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                       {internship.completionStatus === "Pending" && (

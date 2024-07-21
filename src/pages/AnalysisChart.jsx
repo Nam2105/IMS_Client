@@ -347,8 +347,7 @@ class AnalyticsCharts extends Component {
                     <h5>Top 5 Companies</h5>
                     <hr />
                     The chart shows the distribution of our students through
-                    various companies. The top 5 companies are displayed where
-                    our students have interned.
+                    various companies.
                   </div>
                 </div>
               </div>
